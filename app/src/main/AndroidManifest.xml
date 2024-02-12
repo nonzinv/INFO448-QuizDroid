@@ -21,6 +21,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".TopicsList"
+            android:label="Topics List" />
+        <activity android:name=".QuizQuestions"
+            android:label="Quiz Questions" />
+        <activity android:name=".Answers"
+            android:label="Ending Page" />
     </application>
 
 </manifest>
