@@ -32,42 +32,5 @@
             </intent-filter>
         </activity>
     </application>
-    <!--
-    <application
-        android:allowBackup="true"
-        android:dataExtractionRules="@xml/data_extraction_rules"
-        android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
-        android:supportsRtl="true"
-        android:theme="@style/Theme.QuizDroidBasics"
-        tools:targetApi="31">
-        <activity
-            android:name=".MainActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".TopicsList"
-            android:label="Topics List" />
-        <activity android:name=".QuizQuestions"
-            android:label="Quiz Questions" />
-        <activity android:name=".Answers"
-            android:label="Ending Page" />
-        <activity android:name=".Quiz"
-            android:label="Quiz" />
-        <activity android:name=".QuizApp"
-            android:label="QuizApp" />
-        <activity android:name=".Topic"
-            android:label="Topic" />
-        <activity android:name=".TopicRepository"
-            android:label="TopicRepo" />
-        <activity android:name=".MemoryTopicsRepo"
-            android:label="memTopicRepo" />
-    </application>-->
 
 </manifest>

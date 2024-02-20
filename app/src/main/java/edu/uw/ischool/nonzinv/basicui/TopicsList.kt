@@ -16,21 +16,15 @@ class TopicsList : AppCompatActivity() {
         val topicHeader = findViewById<TextView>(R.id.topic)
         val descriptions = findViewById<TextView>(R.id.description)
 
-        val description = when (topic) {
-            "Math" -> "Here are 3 Math Questions"
-            "Physics" -> "Here are 3 Physics Questions"
-            "Superheroes" -> "Here are 3 Marvel Trivia Questions"
-            else -> ""
-        }
-
-        topicHeader.text = "$topic Quiz"
-        descriptions.text = "$description"
+        topicHeader.text = "${topic} Quiz"
+        descriptions.text = "Here are 3 $topic questions"
 
         Log.d("TopicsList", "Selected topic: $topic")
         val beginButton = findViewById<Button>(R.id.btnBegin)
         beginButton.setOnClickListener {
             val intent = Intent(this, QuizQuestions::class.java).apply {
                 putExtra("topic", topic)
+                Log.d("TL", "$topic")
             }
             startActivity(intent)
         }

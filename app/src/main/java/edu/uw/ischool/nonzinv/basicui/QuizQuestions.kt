@@ -14,7 +14,7 @@ class QuizQuestions : AppCompatActivity() {
     private var currQuestion = 0
     private var correctAnswers = 0
 
-    private lateinit var question: List<Questions>
+    private lateinit var question: List<Quiz>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,14 +22,7 @@ class QuizQuestions : AppCompatActivity() {
         val topic = intent.getStringExtra("topic") ?: ""
         Log.d("QuizQuestions", "Received topic: $topic")
 
-        question = when (topic) {
-            "Math" -> QuestionData.mathQuestions
-            "Physics" -> QuestionData.physicsQuestions
-            "Superheroes" -> QuestionData.marvelQuestions
-            else -> {
-                listOf()
-            }
-        }
+        question = QuizApp.topicRepo.getQuestions(topic)
         updateQuestion(question[0])
 
         val submitButton = findViewById<Button>(R.id.submitButton)
@@ -84,7 +77,7 @@ class QuizQuestions : AppCompatActivity() {
         }
     }
 
-    private fun updateQuestion(question: Questions) {
+    private fun updateQuestion(question: Quiz) {
         val questionText: TextView = findViewById(R.id.question)
         val radioGroup: RadioGroup = findViewById(R.id.radiogroup)
         radioGroup.clearCheck()

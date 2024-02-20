@@ -1,5 +1,6 @@
 package edu.uw.ischool.nonzinv.basicui
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.ArrayAdapter
@@ -23,12 +24,13 @@ class MainActivity : AppCompatActivity() {
         val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, topics)
         listView.adapter = adapter
 
-        /*listView.setOnItemClickListener { _, _, position, _ ->
+        listView.setOnItemClickListener { _, _, position, _ ->
             val selected = topics[position]
             val intent = Intent(this@MainActivity, TopicsList::class.java).apply {
                 putExtra("selected", selected)
             }
+            Log.d("MA", "$selected")
             startActivity(intent)
-        }*/
+        }
     }
 }
