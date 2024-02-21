@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         Log.d("MA", "Accessing Repo")
-        val topics = QuizApp.topicRepo.getString()
+        val topics = QuizApp.topicRepo.getTopics()
         val titleText = findViewById<TextView>(R.id.title)
         titleText.text = "QuizDroid"
 
@@ -29,7 +29,6 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this@MainActivity, TopicsList::class.java).apply {
                 putExtra("selected", selected)
             }
-            Log.d("MA", "$selected")
             startActivity(intent)
         }
     }
